@@ -1,17 +1,9 @@
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-- init: |
-    python3 -m venv /workspace/venv
-    source /workspace/venv/bin/activate
-    make dev_install
-    cd /workspace
-    zip -qr venv.zip venv
-    rm -fr venv
-- command: |
-    cd /workspace
-    unzip -q venv.zip
-    source /workspace/venv/bin/activate
-    cd /workspace/dagster
+  - init: echo 'init script' # runs during prebuild
+    command: echo 'start script'
 
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
-    onOpen: open-browser
+    onOpen: open-preview
